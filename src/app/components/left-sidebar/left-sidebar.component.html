@@ -1,5 +1,7 @@
 <section class="sidebar">
   <ul>
-    <li *ngFor="let note of notes">{{ note.title }}</li>
+    <li *ngFor="let note of notes" (click)="setSelectedNote(note.body)">
+      {{ note.title }}
+    </li>
   </ul>
 </section>

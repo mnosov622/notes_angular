@@ -1,1 +1,3 @@
-<div class="note">{{ getSelectedNote() }}</div>
+<div *ngIf="getSelectedNote()" class="note">{{ getSelectedNote() }}</div>
+
+<div *ngIf="!getSelectedNote()" class="note">Select a note</div>

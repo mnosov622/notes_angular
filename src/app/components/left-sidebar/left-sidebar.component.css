@@ -1,0 +1,24 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 75px;
+  width: 200px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+}
+
+.sidebar li {
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+  padding: 1em;
+  border-radius: 20px;
+}
+
+.sidebar li:hover {
+  background-color: #555; /* Change the background color on hover */
+}

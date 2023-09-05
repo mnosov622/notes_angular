@@ -77,4 +77,8 @@
     display: flex;
     overflow: auto;
   }
+
+  .note-dialog {
+    width: 70%;
+  }
 }

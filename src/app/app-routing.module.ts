@@ -3,15 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NoteAreaComponent } from './components/note-area/note-area.component';
 
-// Define your routes
-const routes: Routes = [
-  // Other routes...
-  { path: 'note/:id', component: NoteAreaComponent }, // Add a route for note-details with an 'id' parameter
-];
+const routes: Routes = [{ path: 'note/:id', component: NoteAreaComponent }];
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, RouterModule.forRoot(routes)], // Add RouterModule with your routes
-  exports: [RouterModule], // Export RouterModule for use in other parts of your application
+  imports: [CommonModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

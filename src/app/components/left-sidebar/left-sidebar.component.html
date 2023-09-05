@@ -1,7 +1,36 @@
 <section class="sidebar">
+  <img
+    class="plus-icon"
+    src="/assets/plus.svg"
+    width="20"
+    height="20"
+    alt="plus"
+    (click)="openCreateNoteModal()"
+  />
   <ul>
     <li *ngFor="let note of notes" (click)="setSelectedNote(note)">
       {{ note.title }}
     </li>
   </ul>
 </section>
+
+<div class="overlay" [class.active]="isCreateNoteModalOpen"></div>
+
+<!-- Define the create note modal -->
+<dialog class="note-dialog" [open]="isCreateNoteModalOpen">
+  <form class="newNote-form" method="dialog" (submit)="createNewNote()">
+    <input
+      type="text"
+      placeholder="Title"
+      [(ngModel)]="newNote.title"
+      name="title"
+    />
+    <textarea
+      placeholder="Note"
+      [(ngModel)]="newNote.body"
+      name="body"
+    ></textarea>
+    <button type="submit">Create</button>
+    <button type="button" (click)="closeCreateNoteModal()">Cancel</button>
+  </form>
+</dialog>

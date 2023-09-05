@@ -6,6 +6,7 @@ import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.com
 import { HeaderComponent } from './components/header/header.component';
 import { NoteAreaComponent } from './components/note-area/note-area.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
     HeaderComponent,
     NoteAreaComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

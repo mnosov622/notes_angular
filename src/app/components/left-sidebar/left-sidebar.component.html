@@ -14,7 +14,11 @@
   </ul>
 </section>
 
-<div class="overlay" [class.active]="isCreateNoteModalOpen"></div>
+<div
+  class="overlay"
+  [class.active]="isCreateNoteModalOpen"
+  (click)="closeCreateNoteModal()"
+></div>
 
 <!-- Define the create note modal -->
 <dialog class="note-dialog" [open]="isCreateNoteModalOpen">

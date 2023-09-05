@@ -12,7 +12,7 @@ interface Note {
 })
 export class NoteService {
   private notes: Note[] = notes;
-  private selectedNote: string = '';
+  private selectedNote: Note | undefined;
 
   constructor() {}
 
@@ -21,12 +21,16 @@ export class NoteService {
   }
 
   // Method to set the selected note
-  setSelectedNote(noteBody: string) {
-    this.selectedNote = noteBody;
+  setSelectedNote(note: Note) {
+    this.selectedNote = note;
   }
 
   // Method to get the selected note
   getSelectedNote() {
     return this.selectedNote;
+  }
+
+  getNoteById(id: any): Note | undefined {
+    return this.notes.find((note) => note.id === id);
   }
 }

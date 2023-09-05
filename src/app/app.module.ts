@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NoteAreaComponent } from './components/note-area/note-area.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { NoteAreaComponent } from './components/note-area/note-area.component';
     HeaderComponent,
     NoteAreaComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

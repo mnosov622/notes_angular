@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NoteService } from 'src/app/services/note.service';
 
 @Component({
@@ -6,10 +7,23 @@ import { NoteService } from 'src/app/services/note.service';
   templateUrl: './note-area.component.html',
   styleUrls: ['./note-area.component.css'],
 })
-export class NoteAreaComponent {
-  constructor(private noteService: NoteService) {}
+export class NoteAreaComponent implements OnInit {
+  selectedNote: string | undefined;
 
-  getSelectedNote() {
-    return this.noteService.getSelectedNote();
+  constructor(
+    private noteService: NoteService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    // Get the 'id' parameter from the route
+    this.route.paramMap.subscribe((params) => {
+      const id = params.get('id');
+
+      if (id) {
+        // Call a method to get a note by id
+        this.selectedNote = this.noteService.getNoteById(Number(id))?.body;
+      }
+    });
   }
 }

@@ -63,3 +63,18 @@
 .newNote-form > *:not(:last-child) {
   margin-bottom: 5px;
 }
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    height: unset;
+    top: unset;
+  }
+  .sidebar ul {
+    display: flex;
+    overflow: auto;
+  }
+}
